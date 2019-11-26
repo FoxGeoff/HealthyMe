@@ -3,17 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HeathyMe": {
+    "healthy-me": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "hm",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/HeathyMe",
+            "outputPath": "dist/healthy-me",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +23,16 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/sb-admin.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/sb-admin.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -43,32 +50,25 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "HeathyMe:build"
+            "browserTarget": "healthy-me:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "HeathyMe:build:production"
+              "browserTarget": "healthy-me:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "HeathyMe:build"
+            "browserTarget": "healthy-me:build"
           }
         },
         "test": {
@@ -102,20 +102,19 @@
         }
       }
     },
-    "HeathyMe-e2e": {
+    "healthy-me-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "HeathyMe:serve"
+            "devServerTarget": "healthy-me:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "HeathyMe:serve:production"
+              "devServerTarget": "healthy-me:serve:production"
             }
           }
         },
@@ -131,5 +130,5 @@
       }
     }
   },
-  "defaultProject": "HeathyMe"
+  "defaultProject": "healthy-me"
 }
