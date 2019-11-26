@@ -26,7 +26,8 @@ export class WeightEntriesService {
   or an object expression to be expanded in places where zero 
   or more key-value pairs (for object literals) are expected.
   */
- 
+
+  // https://stackoverflow.com/questions/21687907/typescript-sorting-an-array#21689268
   private sortEntries() {
     this.sortedEntries = [...this.entriesArray].sort((a: Entry, b: Entry) => {
       if (a.date > b.date) {
