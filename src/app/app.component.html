@@ -21,13 +21,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Date</td>
-        <td>Weight</td>
-        <td >Body Fat %</td>
+      <tr *ngFor="let entry of Entries">
+        <td>{{entry.date | date}}</td>
+        <td>{{entry.weight}} lbs</td>
+        <td>{{entry.bodyfat}} %</td>
       </tr>
     </tbody>
   </table>
 </main>
-
-

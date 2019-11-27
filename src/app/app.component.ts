@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WeightEntriesService } from './weight-entries.service';
+import { Entry } from './model/entry';
 
 
 @Component({
@@ -7,11 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
-  
-  constructor() {}
+
+  Entries: Entry[];
+
+  constructor(private entrySvc: WeightEntriesService) { }
 
   ngOnInit() {
+    this.Entries = this.entrySvc.entriesArray;
   }
-  
+
 }

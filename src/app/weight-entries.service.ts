@@ -17,6 +17,7 @@ export class WeightEntriesService {
   public sortedEntries: Entry[];
 
   constructor() {
+    this.sortEntries();
   }
 
   /*
