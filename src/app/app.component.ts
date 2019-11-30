@@ -11,11 +11,16 @@ import { Entry } from './model/entry';
 export class AppComponent {
 
   Entries: Entry[];
+  showBodyFat: boolean = true;
 
   constructor(private entrySvc: WeightEntriesService) { }
 
   ngOnInit() {
     this.Entries = this.entrySvc.entriesArray;
+  }
+
+  toggleBodyFat() {
+    this.showBodyFat = !this.showBodyFat;
   }
 
 }

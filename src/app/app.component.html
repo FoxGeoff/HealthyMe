@@ -11,20 +11,26 @@
     </ul>
   </div>
 </nav>
+<div class="container">
+  <div class="row">
+    <button (click)="toggleBodyFat()" type="button" class="btn btn-primary">
+      {{showBodyFat? 'Hide' : 'Show'}} Percentage Body Fat'</button>
+  </div>
+</div>
 <main>
   <table class="table container">
     <thead>
       <tr>
         <th scope="col">Date</th>
         <th scope="col">Weight</th>
-        <th scope="col">Body Fat %</th>
+        <th *ngIf="showBodyFat" scope="col">Body Fat %</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let entry of Entries">
         <td>{{entry.date | date}}</td>
         <td>{{entry.weight}} lbs</td>
-        <td>{{entry.bodyfat}} %</td>
+        <td *ngIf="showBodyFat">{{entry.bodyfat}} %</td>
       </tr>
     </tbody>
   </table>
