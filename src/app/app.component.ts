@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { WeightEntriesService } from './weight-entries.service';
-import { Entry } from './model/entry';
-
 
 @Component({
   selector: 'hm-root',
@@ -10,17 +7,9 @@ import { Entry } from './model/entry';
 })
 export class AppComponent {
 
-  Entries: Entry[];
-  showBodyFat: boolean = true;
-
-  constructor(private entrySvc: WeightEntriesService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.Entries = this.entrySvc.entriesArray;
-  }
 
-  toggleBodyFat() {
-    this.showBodyFat = !this.showBodyFat;
   }
-
 }
