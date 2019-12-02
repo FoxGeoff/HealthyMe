@@ -8,7 +8,7 @@ import { Entry } from '../model/entry';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
+
   showBodyFat: boolean = true;
   Entries: Entry[];
 
@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   createNewEntry(entry: Entry) {
-    console.log("creteNewEntry() weight:" + entry.weight + "lbs")
+    console.log("creteNewEntry() => weight:" + entry.weight + "lbs" + "   Date:" + entry.date + "   id:" + entry.id);
     this.entrySvc.addEntry(entry);
     this.Entries = this.entrySvc.sortedEntries;
   }
