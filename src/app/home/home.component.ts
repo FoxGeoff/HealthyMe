@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(private entrySvc: WeightEntriesService) { }
 
   ngOnInit() {
-    this.Entries = this.entrySvc.entriesArray;
+    this.Entries = this.entrySvc.sortedEntries;
   }
 
   toggleBodyFat() {
@@ -25,6 +25,6 @@ export class HomeComponent implements OnInit {
   createNewEntry(entry: Entry) {
     console.log("creteNewEntry() weight:" + entry.weight + "lbs")
     this.entrySvc.addEntry(entry);
-    this.Entries = this.entrySvc.entriesArray;
+    this.Entries = this.entrySvc.sortedEntries;
   }
 }

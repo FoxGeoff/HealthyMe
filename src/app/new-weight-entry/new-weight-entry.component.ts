@@ -16,6 +16,6 @@ export class NewWeightEntryComponent implements OnInit {
   }
 
   createEntry() {
-    this.create.emit({id:10,date:new Date('1/1/1996'),weight:567,bodyfat:.20});
+    this.create.emit({id:10,date:new Date('1/4/1996'),weight:567,bodyfat:.20});
   }
 }
