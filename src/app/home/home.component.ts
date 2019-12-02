@@ -21,4 +21,10 @@ export class HomeComponent implements OnInit {
   toggleBodyFat() {
     this.showBodyFat = !this.showBodyFat;
   }
+
+  createNewEntry(entry: Entry) {
+    console.log("creteNewEntry() weight:" + entry.weight + "lbs")
+    this.entrySvc.addEntry(entry);
+    this.Entries = this.entrySvc.entriesArray;
+  }
 }

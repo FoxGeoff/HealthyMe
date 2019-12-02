@@ -42,6 +42,7 @@ export class WeightEntriesService {
   }
 
   addEntry(entry: Entry) {
+    console.log("addEntry() weight:" + entry.weight + "lbs")
     entry.id = getMaxId(this.entriesArray) + 1;
     this.entriesArray = [...this.entriesArray, { ...entry }];
     this.sortEntries();
