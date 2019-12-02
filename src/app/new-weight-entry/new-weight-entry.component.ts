@@ -10,7 +10,7 @@ export class NewWeightEntryComponent implements OnInit {
 
   @Input() showBodyFat: boolean;
   @Output() create = new EventEmitter();
-  model: Entry;
+  model;
 
   constructor() { }
 
@@ -28,6 +28,6 @@ export class NewWeightEntryComponent implements OnInit {
   }
 
   resetForm() {
-    this.model = new Entry();
+    this.model = {};
   }
 }
