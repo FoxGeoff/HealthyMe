@@ -6,7 +6,7 @@
     <form #entryForm="ngForm" class="form-inline">
       <label for="weight" class="sr-only">Weight</label>
       <input type="text" name="weight" id="weight" class="form-control my-1 mr-sm-2" autocomplete="off"
-        placeholder="Weight" [(ngModel)]="model.weight">
+        placeholder="Weight" [(ngModel)]="model.weight" required>
 
 
       <label *ngIf="showBodyFat" for="bodyfat" class="sr-only">Body Fat %</label>
@@ -16,9 +16,9 @@
 
       <label for="entryDate" class="sr-only">Date</label>
       <input type="text" name="entryDate" id="entryDate" autocomplete="off" class="form-control my-1 mr-sm-2"
-        placeholder="Date (mm/dd/yyyy)" [(ngModel)]="model.date">
+        placeholder="Date (mm/dd/yyyy)" [(ngModel)]="model.date" required>
 
-        <button class="btn btn-primary my-1" (click)="createEntry(); resetForm()">Save</button>
+        <button [disabled]="entryForm.form.invalid" class="btn btn-primary my-1" (click)="createEntry(); resetForm()">Save</button>
     </form>
   </div>
 </div>
