@@ -18,4 +18,4 @@ Need some kind of content projection - popup? Maybe a common Tip component
 Http - https://github.com/typicode/json-server
 
 Finish demo
-Break down demo into outline
+Break down demo into outline.
